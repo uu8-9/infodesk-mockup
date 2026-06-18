@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<title>InfoDesk — Maketo failas</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Segoe UI", system-ui, sans-serif; background: #CBD5E1; }
+
+/* Screen tabs using radio buttons */
+#tab1:checked ~ .wrap #s1,
+#tab2:checked ~ .wrap #s2,
+#tab3:checked ~ .wrap #s3,
+#tab4:checked ~ .wrap #s4,
+#tab5:checked ~ .wrap #s5 { display: block; }
+
+input[type=radio] { display: none; }
+
+.wrap { position: relative; }
+
+.screen { display: none; position: relative; width: 1366px; height: 768px; overflow: hidden; background: #F0F4F8; }
+
+/* Switcher */
+.switcher { position: fixed; bottom: 12px; left: 50%; margin-left: -380px; width: 760px; background: #1A2535; border-radius: 8px; padding: 8px 12px; z-index: 9999; display: flex; gap: 8px; align-items: center; }
+.switcher span { color: #9CA3AF; font-size: 11px; white-space: nowrap; }
+.switcher label { font-family: "Segoe UI", sans-serif; font-size: 12px; padding: 0 12px; height: 28px; line-height: 28px; background: #2D3A4E; color: #CBD5E1; border: 1px solid #3D4E62; border-radius: 4px; cursor: pointer; white-space: nowrap; display: inline-block; }
+#tab1:checked ~ .switcher label[for=tab1],
+#tab2:checked ~ .switcher label[for=tab2],
+#tab3:checked ~ .switcher label[for=tab3],
+#tab4:checked ~ .switcher label[for=tab4],
+#tab5:checked ~ .switcher label[for=tab5] { background: #2563EB; color: #FFFFFF; border-color: #2563EB; }
+</style>
+</head>
+<body>
+
+<input type="radio" name="tab" id="tab1" checked>
+<input type="radio" name="tab" id="tab2">
+<input type="radio" name="tab" id="tab3">
+<input type="radio" name="tab" id="tab4">
+<input type="radio" name="tab" id="tab5">
+
+<div class="switcher">
+  <span>Ekranas:</span>
+  <label for="tab1">1 · Prašymo pildymas</label>
+  <label for="tab2">2 · Darbuotojų prašymai</label>
+  <label for="tab3">3 · Mano prašymai</label>
+  <label for="tab4">4 · Prekės</label>
+  <label for="tab5">5 · Administracija</label>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<!-- SCREEN 1: Prašymo pildymas                                   -->
+<!-- ============================================================ -->
+<div class="screen" id="s1">
+  <!-- Left Nav -->
+  <div style="position:absolute;top:0;left:0;width:200px;height:768px;background:#1E2A3A;">
+    <div style="position:absolute;top:0;left:0;width:200px;height:64px;background:#162232;">
+      <div style="position:absolute;top:20px;left:24px;font-size:16px;font-weight:600;color:#FFFFFF;">InfoDesk</div>
+    </div>
+    <div style="position:absolute;top:64px;left:0;width:200px;height:48px;background:#2563EB;">
+      <div style="position:absolute;top:0;left:0;width:4px;height:48px;background:#93C5FD;"></div>
+      <div style="position:absolute;top:15px;left:24px;font-size:14px;font-weight:500;color:#FFFFFF;">Pildyti prašymą</div>
+    </div>
+    <div style="position:absolute;top:112px;left:0;width:200px;height:48px;">
+      <div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Mano prašymai</div>
+    </div>
+    <div style="position:absolute;top:712px;left:0;width:200px;height:1px;background:#2D3F55;"></div>
+    <div style="position:absolute;top:720px;left:24px;font-size:12px;color:#9CA3AF;">Tomas Kavaliauskas</div>
+    <div style="position:absolute;top:738px;left:24px;font-size:12px;color:#4B5563;">IT skyrius</div>
+  </div>
+  <!-- Header -->
+  <div style="position:absolute;top:0;left:200px;width:1166px;height:64px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;">
+    <div style="position:absolute;top:16px;left:32px;font-size:24px;font-weight:400;color:#1A1C1E;">Prašymo pildymas</div>
+    <div style="position:absolute;top:12px;left:848px;width:128px;height:40px;border:1px solid #E2E6EA;border-radius:8px;background:#FFFFFF;">
+      <div style="position:absolute;top:11px;left:0;width:128px;text-align:center;font-size:14px;font-weight:500;color:#4B5563;">Išvalyti formą</div>
+    </div>
+    <div style="position:absolute;top:12px;left:984px;width:168px;height:40px;background:#2563EB;border-radius:8px;">
+      <div style="position:absolute;top:11px;left:0;width:168px;text-align:center;font-size:14px;font-weight:500;color:#FFFFFF;">Pateikti prašymą</div>
+    </div>
+  </div>
+  <!-- Search -->
+  <div style="position:absolute;top:88px;left:232px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Produkto paieška</div>
+  <div style="position:absolute;top:112px;left:232px;width:480px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <svg style="position:absolute;top:12px;left:12px;width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <div style="position:absolute;top:12px;left:36px;font-size:14px;color:#1A1C1E;">PRD-00482</div>
+  </div>
+  <div style="position:absolute;top:112px;left:720px;width:96px;height:40px;background:#2563EB;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:96px;text-align:center;font-size:14px;font-weight:500;color:#FFFFFF;">Ieškoti</div>
+  </div>
+  <!-- Success -->
+  <div style="position:absolute;top:168px;left:232px;width:584px;height:32px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;border-left:4px solid #16A34A;">
+    <div style="position:absolute;top:8px;left:16px;font-size:12px;font-weight:500;color:#16A34A;">Produktas rastas: PRD-00482 — Kavos aparatas Philips EP2235/40</div>
+  </div>
+  <!-- Type selector -->
+  <div style="position:absolute;top:216px;left:232px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Prašymo tipas</div>
+  <div style="position:absolute;top:240px;left:232px;width:280px;height:40px;background:#2563EB;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:280px;text-align:center;font-size:14px;font-weight:500;color:#FFFFFF;">Trūkstama informacija</div>
+  </div>
+  <div style="position:absolute;top:240px;left:520px;width:280px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:280px;text-align:center;font-size:14px;color:#4B5563;">Klaidinga informacija</div>
+  </div>
+  <div style="position:absolute;top:288px;left:232px;width:280px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:280px;text-align:center;font-size:14px;color:#4B5563;">Naujas produktas</div>
+  </div>
+  <div style="position:absolute;top:288px;left:520px;width:280px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:280px;text-align:center;font-size:14px;color:#4B5563;">Produkto šalinimas</div>
+  </div>
+  <!-- Form fields -->
+  <div style="position:absolute;top:352px;left:232px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Prašymo informacija</div>
+  <div style="position:absolute;top:376px;left:232px;font-size:12px;font-weight:500;color:#4B5563;">Trūkstamas laukas <span style="color:#DC2626;">*</span></div>
+  <div style="position:absolute;top:392px;left:232px;width:584px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:16px;font-size:14px;color:#1A1C1E;">Aprašymas</div>
+    <svg style="position:absolute;top:14px;right:14px;width:12px;height:12px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div style="position:absolute;top:448px;left:232px;font-size:12px;font-weight:500;color:#4B5563;">Pageidaujama reikšmė <span style="color:#DC2626;">*</span></div>
+  <div style="position:absolute;top:464px;left:232px;width:584px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:16px;font-size:14px;color:#9CA3AF;">Įveskite reikiamą reikšmę...</div>
+  </div>
+  <div style="position:absolute;top:520px;left:232px;font-size:12px;font-weight:500;color:#4B5563;">Komentaras</div>
+  <div style="position:absolute;top:536px;left:232px;width:584px;height:88px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:12px;left:16px;width:552px;font-size:14px;color:#1A1C1E;line-height:1.5;">Šio produkto aprašymo laukas yra privalomas katalogui. Prašome užpildyti remiantis gamintojo specifikacija.</div>
+  </div>
+  <div style="position:absolute;top:648px;left:232px;width:184px;height:40px;background:#2563EB;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:184px;text-align:center;font-size:14px;font-weight:500;color:#FFFFFF;">Pateikti prašymą</div>
+  </div>
+  <div style="position:absolute;top:648px;left:424px;width:136px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:11px;left:0;width:136px;text-align:center;font-size:14px;color:#4B5563;">Išvalyti formą</div>
+  </div>
+  <div style="position:absolute;top:696px;left:232px;font-size:12px;color:#9CA3AF;">* — privalomi laukai</div>
+  <!-- Right panel -->
+  <div style="position:absolute;top:80px;left:856px;width:1px;height:640px;background:#E2E6EA;"></div>
+  <div style="position:absolute;top:80px;left:872px;width:464px;height:248px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+    <div style="position:absolute;top:0;left:0;width:464px;height:48px;background:#F8FAFC;border-bottom:1px solid #E2E6EA;border-radius:8px 8px 0 0;">
+      <div style="position:absolute;top:14px;left:16px;font-size:14px;font-weight:600;color:#1A1C1E;">Rastas produktas</div>
+      <div style="position:absolute;top:13px;right:16px;padding:4px 10px;background:#DCFCE7;border-radius:100px;font-size:12px;font-weight:500;color:#16A34A;">Aktyvus</div>
+    </div>
+    <div style="position:absolute;top:56px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Produkto kodas</div><div style="position:absolute;top:56px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">PRD-00482</div>
+    <div style="position:absolute;top:80px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Pavadinimas</div><div style="position:absolute;top:80px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">Kavos aparatas Philips EP2235/40</div>
+    <div style="position:absolute;top:104px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Kategorija</div><div style="position:absolute;top:104px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">Buitinė technika</div>
+    <div style="position:absolute;top:128px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">EAN kodas</div><div style="position:absolute;top:128px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">8710103879107</div>
+    <div style="position:absolute;top:152px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Tiekėjas</div><div style="position:absolute;top:152px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">Philips Lietuva UAB</div>
+    <div style="position:absolute;top:176px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Aprašymas</div><div style="position:absolute;top:176px;left:184px;font-size:12px;font-style:italic;color:#D97706;">— trūksta</div>
+    <div style="position:absolute;top:200px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Svoris (kg)</div><div style="position:absolute;top:200px;left:184px;font-size:12px;font-style:italic;color:#D97706;">— trūksta</div>
+    <div style="position:absolute;top:224px;left:16px;width:160px;font-size:12px;color:#9CA3AF;">Kaina (EUR)</div><div style="position:absolute;top:224px;left:184px;font-size:12px;font-weight:500;color:#1A1C1E;">189,00</div>
+  </div>
+  <div style="position:absolute;top:344px;left:872px;width:464px;height:128px;background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #D97706;border-radius:8px;">
+    <div style="position:absolute;top:12px;left:16px;font-size:14px;font-weight:600;color:#92400E;">Trūkstami laukai (2)</div>
+    <div style="position:absolute;top:40px;left:0;width:464px;height:1px;background:#FDE68A;"></div>
+    <div style="position:absolute;top:56px;left:16px;font-size:12px;color:#92400E;">• <strong>Aprašymas</strong> — produkto aprašymas katalogui</div>
+    <div style="position:absolute;top:80px;left:16px;font-size:12px;color:#92400E;">• <strong>Svoris (kg)</strong> — bruto svoris kilogramais</div>
+    <div style="position:absolute;top:104px;left:16px;font-size:12px;color:#B45309;">Pasirinktas laukas: Aprašymas</div>
+  </div>
+  <div style="position:absolute;top:488px;left:872px;width:464px;height:192px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;">
+    <div style="position:absolute;top:12px;left:16px;font-size:14px;font-weight:600;color:#1D4ED8;">Kaip pildyti prašymą</div>
+    <div style="position:absolute;top:40px;left:0;width:464px;height:1px;background:#BFDBFE;"></div>
+    <div style="position:absolute;top:56px;left:16px;width:432px;font-size:12px;color:#1E40AF;">1. Įveskite produkto kodą arba pavadinimą ir spustelėkite <strong>Ieškoti</strong>.</div>
+    <div style="position:absolute;top:80px;left:16px;width:432px;font-size:12px;color:#1E40AF;">2. Pasirinkite tinkamą prašymo tipą iš keturių variantų.</div>
+    <div style="position:absolute;top:104px;left:16px;width:432px;font-size:12px;color:#1E40AF;">3. Užpildykite privalomus laukus (pažymėtus <span style="color:#DC2626;">*</span>).</div>
+    <div style="position:absolute;top:128px;left:16px;width:432px;font-size:12px;color:#1E40AF;">4. Spustelėkite <strong>Pateikti prašymą</strong>.</div>
+    <div style="position:absolute;top:160px;left:16px;font-size:12px;color:#93C5FD;">Prašymai nagrinėjami per 1–2 darbo dienas.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCREEN 2: Darbuotojų prašymai                                -->
+<!-- ============================================================ -->
+<div class="screen" id="s2">
+  <div style="position:absolute;top:0;left:0;width:200px;height:768px;background:#1E2A3A;">
+    <div style="position:absolute;top:0;left:0;width:200px;height:64px;background:#162232;"><div style="position:absolute;top:20px;left:24px;font-size:16px;font-weight:600;color:#FFFFFF;">InfoDesk</div></div>
+    <div style="position:absolute;top:64px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Pildyti prašymą</div></div>
+    <div style="position:absolute;top:112px;left:0;width:200px;height:48px;background:#2563EB;">
+      <div style="position:absolute;top:0;left:0;width:4px;height:48px;background:#93C5FD;"></div>
+      <div style="position:absolute;top:15px;left:24px;font-size:14px;font-weight:500;color:#FFFFFF;">Darbuotojų prašymai</div>
+    </div>
+    <div style="position:absolute;top:160px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Mano prašymai</div></div>
+    <div style="position:absolute;top:208px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Prekės</div></div>
+    <div style="position:absolute;top:256px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Administracija</div></div>
+    <div style="position:absolute;top:712px;left:0;width:200px;height:1px;background:#2D3F55;"></div>
+    <div style="position:absolute;top:720px;left:24px;font-size:12px;color:#9CA3AF;">Eglė Rimkienė</div>
+    <div style="position:absolute;top:738px;left:24px;font-size:12px;color:#4B5563;">Administratorė</div>
+  </div>
+  <div style="position:absolute;top:0;left:200px;width:760px;height:64px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;">
+    <div style="position:absolute;top:16px;left:32px;font-size:24px;font-weight:400;color:#1A1C1E;">Darbuotojų prašymai</div>
+    <div style="position:absolute;top:20px;left:432px;padding:2px 10px;background:#DBEAFE;border-radius:100px;font-size:12px;font-weight:600;color:#2563EB;">7 aktyvūs</div>
+  </div>
+  <!-- Filter bar -->
+  <div style="position:absolute;top:64px;left:200px;width:760px;height:56px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;">
+    <div style="position:absolute;top:8px;left:16px;width:160px;height:40px;background:#F8FAFC;border:1px solid #E2E6EA;border-radius:8px;">
+      <svg style="position:absolute;top:12px;left:10px;width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div style="position:absolute;top:12px;left:30px;font-size:12px;color:#9CA3AF;">Kodas / pav.</div>
+    </div>
+    <div style="position:absolute;top:8px;left:184px;width:120px;height:40px;background:#F8FAFC;border:1px solid #E2E6EA;border-radius:8px;"><div style="position:absolute;top:12px;left:12px;font-size:12px;color:#4B5563;">Visi tipai</div><svg style="position:absolute;top:14px;right:8px;width:10px;height:10px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div style="position:absolute;top:8px;left:312px;width:120px;height:40px;background:#F8FAFC;border:1px solid #E2E6EA;border-radius:8px;"><div style="position:absolute;top:12px;left:12px;font-size:12px;color:#4B5563;">Tiekėjai</div><svg style="position:absolute;top:14px;right:8px;width:10px;height:10px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div style="position:absolute;top:8px;left:440px;width:144px;height:40px;background:#F8FAFC;border:1px solid #E2E6EA;border-radius:8px;"><div style="position:absolute;top:12px;left:12px;font-size:12px;color:#4B5563;">Aktyvūs prašymai</div><svg style="position:absolute;top:14px;right:8px;width:10px;height:10px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div style="position:absolute;top:8px;left:592px;width:120px;height:40px;background:#F8FAFC;border:1px solid #E2E6EA;border-radius:8px;"><div style="position:absolute;top:12px;left:12px;font-size:12px;color:#4B5563;">Visi priskirti</div><svg style="position:absolute;top:14px;right:8px;width:10px;height:10px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+  </div>
+  <!-- Table header -->
+  <div style="position:absolute;top:120px;left:200px;width:760px;height:48px;background:#F4F6F8;border-bottom:1px solid #E2E6EA;">
+    <div style="position:absolute;top:16px;left:16px;width:48px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Nr.</div>
+    <div style="position:absolute;top:16px;left:72px;width:88px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Kodas</div>
+    <div style="position:absolute;top:16px;left:168px;width:144px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Pavadinimas</div>
+    <div style="position:absolute;top:16px;left:320px;width:104px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Tipas</div>
+    <div style="position:absolute;top:16px;left:432px;width:88px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Priskirta</div>
+    <div style="position:absolute;top:16px;left:528px;width:104px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Statusas</div>
+    <div style="position:absolute;top:16px;left:648px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Veiksmai</div>
+  </div>
+  <!-- Rows -->
+  <div style="position:absolute;top:168px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">001</div>
+    <div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00482</div>
+    <div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">Kavos ap. Philips</div>
+    <div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Trūkstama inf.</div>
+    <div style="position:absolute;top:15px;left:432px;font-size:12px;color:#9CA3AF;">—</div>
+    <div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#DBEAFE;border-radius:100px;font-size:12px;font-weight:500;color:#2563EB;">Nauja</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <!-- SELECTED ROW -->
+  <div style="position:absolute;top:216px;left:200px;width:760px;height:48px;background:#EFF6FF;border-bottom:1px solid #E2E6EA;border-left:3px solid #2563EB;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">002</div>
+    <div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00157</div>
+    <div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;font-weight:500;color:#1A1C1E;overflow:hidden;white-space:nowrap;">Samsung QLED 55Q80C</div>
+    <div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Klaidinga inf.</div>
+    <div style="position:absolute;top:15px;left:432px;font-size:12px;font-weight:500;color:#1A1C1E;">Matas J.</div>
+    <div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#FEF3C7;border-radius:100px;font-size:12px;font-weight:500;color:#D97706;">Nagrinėjama</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:264px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">003</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00389</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">Tefal ActiFry XL</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Naujas prod.</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#9CA3AF;">—</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#DBEAFE;border-radius:100px;font-size:12px;font-weight:500;color:#2563EB;">Nauja</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:312px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">004</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00621</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">Bosch WAN28281LT</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Trūkstama inf.</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#1A1C1E;">Eglė R.</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#FEF3C7;border-radius:100px;font-size:12px;font-weight:500;color:#D97706;">Nagrinėjama</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:360px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">005</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00094</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">LG InstaView GSX961</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Prod. šalinimas</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#1A1C1E;">Matas J.</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#CCFBF1;border-radius:100px;font-size:12px;font-weight:500;color:#0F766E;">Priskirta</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:408px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">006</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00318</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">Philips Airfryer XXL</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Klaidinga inf.</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#9CA3AF;">—</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#DBEAFE;border-radius:100px;font-size:12px;font-weight:500;color:#2563EB;">Nauja</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:456px;left:200px;width:760px;height:48px;background:#FFFFFF;border-bottom:1px solid #F3F4F6;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;font-weight:500;color:#1A1C1E;">007</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#4B5563;">PRD-00773</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#4B5563;overflow:hidden;white-space:nowrap;">Braun Series 9 Pro</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#4B5563;">Trūkstama inf.</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#9CA3AF;">—</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#DBEAFE;border-radius:100px;font-size:12px;font-weight:500;color:#2563EB;">Nauja</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:504px;left:200px;width:760px;height:48px;background:#FAFAFA;border-bottom:1px solid #F3F4F6;opacity:0.65;">
+    <div style="position:absolute;top:15px;left:16px;font-size:14px;color:#9CA3AF;">008</div><div style="position:absolute;top:15px;left:72px;font-size:14px;color:#9CA3AF;">PRD-00447</div><div style="position:absolute;top:15px;left:168px;width:144px;font-size:14px;color:#9CA3AF;overflow:hidden;white-space:nowrap;">Siemens TP503R04</div><div style="position:absolute;top:15px;left:320px;font-size:12px;color:#9CA3AF;">Naujas prod.</div><div style="position:absolute;top:15px;left:432px;font-size:12px;color:#9CA3AF;">Eglė R.</div><div style="position:absolute;top:13px;left:528px;padding:4px 10px;background:#DCFCE7;border-radius:100px;font-size:12px;font-weight:500;color:#16A34A;">Išspręsta</div>
+    <div style="position:absolute;top:8px;left:648px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <div style="position:absolute;top:8px;left:684px;width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="1.5" width="16" height="16" style="position:absolute;top:8px;left:8px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+  </div>
+  <div style="position:absolute;top:560px;left:216px;font-size:12px;color:#9CA3AF;">Išspręsti (1) prašymai paslėpti. Keiskite filtrą norėdami matyti.</div>
+  <!-- Right panel -->
+  <div style="position:absolute;top:0;left:960px;width:406px;height:768px;background:#FFFFFF;border-left:1px solid #E2E6EA;">
+    <div style="position:absolute;top:0;left:0;width:406px;height:56px;background:#F8FAFC;border-bottom:1px solid #E2E6EA;">
+      <div style="position:absolute;top:18px;left:24px;font-size:16px;font-weight:600;color:#1A1C1E;">Prašymo informacija</div>
+      <div style="position:absolute;top:16px;right:16px;padding:4px 10px;background:#FEF3C7;border-radius:100px;font-size:12px;font-weight:500;color:#D97706;">Nagrinėjama</div>
+    </div>
+    <div style="position:absolute;top:72px;left:24px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Prašymo duomenys</div>
+    <div style="position:absolute;top:96px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">Prašymo nr.</div><div style="position:absolute;top:96px;left:168px;font-size:12px;font-weight:500;color:#1A1C1E;">PR-2024-002</div>
+    <div style="position:absolute;top:120px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">Pateikimo data</div><div style="position:absolute;top:120px;left:168px;font-size:12px;font-weight:500;color:#1A1C1E;">2024-11-14</div>
+    <div style="position:absolute;top:144px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">Produktas</div><div style="position:absolute;top:144px;left:168px;font-size:12px;font-weight:500;color:#1A1C1E;">PRD-00157</div>
+    <div style="position:absolute;top:160px;left:168px;font-size:12px;color:#4B5563;">Samsung QLED 55Q80C</div>
+    <div style="position:absolute;top:184px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">Tiekėjas</div><div style="position:absolute;top:184px;left:168px;font-size:12px;font-weight:500;color:#1A1C1E;">Samsung Electronics Baltija</div>
+    <div style="position:absolute;top:208px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">Darbuotojas</div><div style="position:absolute;top:208px;left:168px;font-size:12px;font-weight:500;color:#1A1C1E;">Rasa Kazlauskienė</div>
+    <div style="position:absolute;top:232px;left:24px;width:136px;font-size:12px;color:#9CA3AF;">El. paštas</div><div style="position:absolute;top:232px;left:168px;font-size:12px;color:#2563EB;">r.kazlauskiene@imone.lt</div>
+    <div style="position:absolute;top:256px;left:16px;width:374px;height:1px;background:#E2E6EA;"></div>
+    <div style="position:absolute;top:272px;left:24px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Prašymo turinys</div>
+    <div style="position:absolute;top:296px;left:24px;font-size:12px;color:#9CA3AF;">Neteisingas laukas</div>
+    <div style="position:absolute;top:312px;left:24px;font-size:14px;font-weight:500;color:#1A1C1E;">Kaina (EUR)</div>
+    <div style="position:absolute;top:344px;left:24px;font-size:12px;color:#9CA3AF;">Dabartinė reikšmė</div>
+    <div style="position:absolute;top:360px;left:24px;font-size:14px;font-weight:500;color:#DC2626;">1 299,00</div>
+    <div style="position:absolute;top:392px;left:24px;font-size:12px;color:#9CA3AF;">Teisinga reikšmė</div>
+    <div style="position:absolute;top:408px;left:24px;font-size:14px;font-weight:500;color:#16A34A;">1 199,00</div>
+    <div style="position:absolute;top:440px;left:24px;font-size:12px;color:#9CA3AF;">Komentaras</div>
+    <div style="position:absolute;top:456px;left:24px;width:358px;font-size:12px;color:#4B5563;line-height:1.5;">Interneto kataloge nurodyta kitokia kaina. Prašome patikrinti.</div>
+    <div style="position:absolute;top:496px;left:16px;width:374px;height:1px;background:#E2E6EA;"></div>
+    <div style="position:absolute;top:512px;left:24px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase;">Atsakymas</div>
+    <div style="position:absolute;top:536px;left:24px;font-size:12px;font-weight:500;color:#4B5563;">Priskirti darbuotojui</div>
+    <div style="position:absolute;top:552px;left:24px;width:358px;height:40px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+      <div style="position:absolute;top:11px;left:16px;font-size:14px;color:#1A1C1E;">Matas Jonaitis</div>
+      <svg style="position:absolute;top:14px;right:14px;width:12px;height:12px;" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div style="position:absolute;top:608px;left:24px;font-size:12px;font-weight:500;color:#4B5563;">Atsakymo komentaras <span style="color:#DC2626;">*</span></div>
+    <div style="position:absolute;top:624px;left:24px;width:358px;height:80px;background:#FFFFFF;border:1px solid #E2E6EA;border-radius:8px;">
+      <div style="position:absolute;top:12px;left:16px;font-size:14px;color:#9CA3AF;">Įrašykite atsakymą darbuotojui...</div>
+    </div>
+    <div style="position:absolute;top:720px;left:24px;width:358px;height:40px;background:#2563EB;border-radius:8px;">
+      <div style="position:absolute;top:11px;left:0;width:358px;text-align:center;font-size:14px;font-weight:500;color:#FFFFFF;">Išsiųsti atsakymą</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREENS 3-5: placeholder screens with nav only for brevity -->
+<div class="screen" id="s3">
+  <div style="position:absolute;top:0;left:0;width:200px;height:768px;background:#1E2A3A;"><div style="position:absolute;top:0;left:0;width:200px;height:64px;background:#162232;"><div style="position:absolute;top:20px;left:24px;font-size:16px;font-weight:600;color:#FFFFFF;">InfoDesk</div></div><div style="position:absolute;top:64px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Pildyti prašymą</div></div><div style="position:absolute;top:112px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Darbuotojų prašymai</div></div><div style="position:absolute;top:160px;left:0;width:200px;height:48px;background:#2563EB;"><div style="position:absolute;top:0;left:0;width:4px;height:48px;background:#93C5FD;"></div><div style="position:absolute;top:15px;left:24px;font-size:14px;font-weight:500;color:#FFFFFF;">Mano prašymai</div></div><div style="position:absolute;top:712px;left:0;width:200px;height:1px;background:#2D3F55;"></div><div style="position:absolute;top:720px;left:24px;font-size:12px;color:#9CA3AF;">Tomas Kavaliauskas</div><div style="position:absolute;top:738px;left:24px;font-size:12px;color:#4B5563;">IT skyrius</div></div>
+  <div style="position:absolute;top:0;left:200px;width:1166px;height:64px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;"><div style="position:absolute;top:16px;left:32px;font-size:24px;font-weight:400;color:#1A1C1E;">Mano prašymai</div></div>
+  <div style="position:absolute;top:300px;left:583px;font-size:14px;color:#9CA3AF;text-align:center;">Šis ekranas kuriamas...</div>
+</div>
+
+<div class="screen" id="s4">
+  <div style="position:absolute;top:0;left:0;width:200px;height:768px;background:#1E2A3A;"><div style="position:absolute;top:0;left:0;width:200px;height:64px;background:#162232;"><div style="position:absolute;top:20px;left:24px;font-size:16px;font-weight:600;color:#FFFFFF;">InfoDesk</div></div><div style="position:absolute;top:64px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Pildyti prašymą</div></div><div style="position:absolute;top:112px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Darbuotojų prašymai</div></div><div style="position:absolute;top:160px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Mano prašymai</div></div><div style="position:absolute;top:208px;left:0;width:200px;height:48px;background:#2563EB;"><div style="position:absolute;top:0;left:0;width:4px;height:48px;background:#93C5FD;"></div><div style="position:absolute;top:15px;left:24px;font-size:14px;font-weight:500;color:#FFFFFF;">Prekės</div></div><div style="position:absolute;top:256px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Administracija</div></div><div style="position:absolute;top:712px;left:0;width:200px;height:1px;background:#2D3F55;"></div><div style="position:absolute;top:720px;left:24px;font-size:12px;color:#9CA3AF;">Eglė Rimkienė</div><div style="position:absolute;top:738px;left:24px;font-size:12px;color:#4B5563;">Administratorė</div></div>
+  <div style="position:absolute;top:0;left:200px;width:1166px;height:64px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;"><div style="position:absolute;top:16px;left:32px;font-size:24px;font-weight:400;color:#1A1C1E;">Prekės</div></div>
+  <div style="position:absolute;top:300px;left:583px;font-size:14px;color:#9CA3AF;text-align:center;">Šis ekranas kuriamas...</div>
+</div>
+
+<div class="screen" id="s5">
+  <div style="position:absolute;top:0;left:0;width:200px;height:768px;background:#1E2A3A;"><div style="position:absolute;top:0;left:0;width:200px;height:64px;background:#162232;"><div style="position:absolute;top:20px;left:24px;font-size:16px;font-weight:600;color:#FFFFFF;">InfoDesk</div></div><div style="position:absolute;top:64px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Pildyti prašymą</div></div><div style="position:absolute;top:112px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Darbuotojų prašymai</div></div><div style="position:absolute;top:160px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Mano prašymai</div></div><div style="position:absolute;top:208px;left:0;width:200px;height:48px;"><div style="position:absolute;top:15px;left:24px;font-size:14px;color:#CBD5E1;">Prekės</div></div><div style="position:absolute;top:256px;left:0;width:200px;height:48px;background:#2563EB;"><div style="position:absolute;top:0;left:0;width:4px;height:48px;background:#93C5FD;"></div><div style="position:absolute;top:15px;left:24px;font-size:14px;font-weight:500;color:#FFFFFF;">Administracija</div></div><div style="position:absolute;top:712px;left:0;width:200px;height:1px;background:#2D3F55;"></div><div style="position:absolute;top:720px;left:24px;font-size:12px;color:#9CA3AF;">Eglė Rimkienė</div><div style="position:absolute;top:738px;left:24px;font-size:12px;color:#4B5563;">Administratorė</div></div>
+  <div style="position:absolute;top:0;left:200px;width:1166px;height:64px;background:#FFFFFF;border-bottom:1px solid #E2E6EA;"><div style="position:absolute;top:16px;left:32px;font-size:24px;font-weight:400;color:#1A1C1E;">Administracija</div></div>
+  <div style="position:absolute;top:300px;left:583px;font-size:14px;color:#9CA3AF;text-align:center;">Šis ekranas kuriamas...</div>
+</div>
+
+</div><!-- end .wrap -->
+</body>
+</html>
